@@ -12,7 +12,7 @@ import { Grid } from '@material-ui/core';
 import { Slider } from '@material-ui/core';
 import { useDataLayerValue } from '../dataLayer/DataLayer';
 
-export const Footer = () => {
+export const Footer = ({ spotify }) => {
   const [{ token, item, playing }, dispatch] = useDataLayerValue();
 
   return (

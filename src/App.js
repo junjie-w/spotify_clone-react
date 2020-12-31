@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Login } from './components/Login';
 import { Player } from './components/Player';
@@ -34,6 +34,13 @@ function App() {
           user: user
         })
       });
+
+      spotify.getPlaylist("b58b02950a8044f28e9d0ba50607df04").then(response => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      })
 
       spotify.getUserPlaylists().then((playlists) => {
         //spotify.getPlaylist().then((playlists) => {
